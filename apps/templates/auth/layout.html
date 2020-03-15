@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title {{ title }}></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="utf-8"/>
+        <link rel="stylesheet" href="./static/css/style.css">
+
+    </head>
+    <body>
+        <a href="/auth/login" class="a_noline">
+            <h1>User Authentification</h1>
+        </a>
+        {% block content %}
+        <!-- here you go -->
+        {% endblock %}
+        <footer>
+            <hr>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for m in messages %}
+                    <p> {{ m }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </footer>
+    </body>
+</html>

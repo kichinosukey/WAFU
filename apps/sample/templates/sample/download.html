@@ -1,0 +1,9 @@
+{% extends 'sample/layout.html' %}
+{% block content %}
+<div class="menu_download">
+    <form method="GET" action="download/file">
+        <input type="file" id="filepath" name="filepath">
+        <input type="submit" value="download as .xlsx">
+    </form>
+</div>
+{% endblock %}

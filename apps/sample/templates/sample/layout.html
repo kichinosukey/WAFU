@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title {{ title }}></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="utf-8"/>
+        <link rel="stylesheet" href="./static/css/style.css">
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-gl-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-api-1.4.0.min.js"></script>
+    </head>
+    <body>
+        <a href="/sample" class="a_noline">
+            <h1>Sample</h1>
+        </a>
+        {% block content %}
+        <!-- here you go -->
+        {% endblock %}
+        <footer>
+            <hr>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for m in messages %}
+                    <p> {{ m }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </footer>
+    </body>
+
+</html>
